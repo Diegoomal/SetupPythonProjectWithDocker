@@ -1,14 +1,2 @@
 pandas
 numpy
-# tensorrt
-# tensorflow
-# tensorflow[and-cuda]
-# nvidia-cuda-toolkit
-# nvidia-cudnn
-# tqdm
-# matplotlib
-# ipython
-# tensorflow_hub
-# opencv-python
-# tensorflow_addons
-# tensorflow_datasets
