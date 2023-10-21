@@ -1,17 +1,11 @@
-# Usa uma imagem do Python como base
-FROM python:3.10-alpine
+#
+# link: https://www.run.ai/guides/tensorflow/tensorflow-with-docker
+#
 
-# Define o diretório de trabalho do contêiner
+FROM tensorflow/tensorflow:latest-gpu
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 WORKDIR /app
-
-# Copia o arquivo requirements.txt para o diretório /app do contêiner
-COPY app/requirements.txt .
-
-# Instala as dependências do Python especificadas no requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copia todo o conteúdo do diretório src/app para o diretório /app do contêiner
 COPY app/ .
-
-# Executa o comando padrão do contêiner (neste caso, executa o arquivo __init__.py)
-CMD ["python", "__init__.py"]
+CMD [ "python3", "main.py" ]
